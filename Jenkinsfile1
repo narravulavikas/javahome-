@@ -1,9 +1,6 @@
-node{
- 
+node{ 
   stage{'SCM checkout'}{
      git 'https://github.com/narravulavikas/javahome-.git'
     }
-   stage{'maven build'}{
-       sh "${mvn} clean package"
-    }
+    
 }
