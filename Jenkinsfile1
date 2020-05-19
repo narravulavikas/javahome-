@@ -1,9 +1,9 @@
 node{
+  def mvn = tool (name: 'M3', type: 'maven') + '/bin/mvn'
   stage{'SCM checkout'}{
      git 'https://github.com/narravulavikas/javahome-.git'
     }
    stage{'maven build'}{
-       def mvnHome = tool name: 'M3', type: 'maven'
-       sh "${mvnHome}/bin/mvn package"
+       sh "${mvn} clean package"
     }
 }
