@@ -14,5 +14,10 @@ node {
 	   def mvn = tool (name: 'M3', type: 'maven') + '/bin/mvn'
 	   sh "${mvn} clean package"
    }
+
+	stage('archive'){
+	   sh 'bin/makeindex'
+	   archiveArtifacts 'index.jsp'
+   }
    
 }
