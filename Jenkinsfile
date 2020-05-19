@@ -15,9 +15,8 @@ node {
 	   sh "${mvn} clean package"
    }
 
-	stage('archive'){
-	   sh 'bin/makeindex'
-	   archiveArtifacts 'index.jsp'
+	stage('email'){
+	   mail bcc: '', body: 'successfully completed the task ', cc: '', from: '', replyTo: '', subject: 'hi there !!!!', to: 'vikasnarravula96@gmail.com'
    }
    
 }
