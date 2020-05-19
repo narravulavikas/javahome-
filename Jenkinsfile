@@ -12,8 +12,8 @@ node {
 	
    stage('Mvn Package'){
 	   // Build using maven
-	   
-	   sh "${mvn} clean package deploy"
+	   def mvn = tool (name: 'M3', type: 'maven') + '/bin/mvn'
+	   sh "${mvn} package"
    }
    
 }
