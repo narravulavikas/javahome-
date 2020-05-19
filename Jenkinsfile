@@ -18,5 +18,9 @@ node {
 	stage('email'){
 	   mail bcc: '', body: 'successfully completed the task ', cc: '', from: '', replyTo: '', subject: 'hi there !!!!', to: 'vikasnarravula96@gmail.com'
    }
-   
+  
+	stage('slack'){
+	   slackSend channel: '#projectx', color: 'good ', message: 'hi slack configuration ', teamDomain: 'https://hooks.slack.com/services', tokenCredentialId: 'slack', username: 'vikas narravula'
+	
+   }
 }
